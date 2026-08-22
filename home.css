@@ -196,15 +196,15 @@
   transform: translateY(0);
 }
 
-/* Keep homepage distribution logos in their original colours at all times. */
-.brands img {
-  filter: none;
-  opacity: 1;
+/* Force homepage distribution logos to stay in their original colours. */
+body .brands img {
+  filter: none !important;
+  opacity: 1 !important;
 }
 
-.brands a:hover img {
-  filter: none;
-  opacity: 1;
+body .brands a:hover img {
+  filter: none !important;
+  opacity: 1 !important;
 }
 
 @media (max-width: 820px) {
