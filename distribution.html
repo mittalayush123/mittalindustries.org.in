@@ -2,391 +2,79 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Authorized Distribution Network | Mittal Industries</title>
+  <title>Distribution & Material Network | Mittal Industries</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Explore the authorized distribution network of Mittal Industries, representing globally trusted industrial material brands across India.">
+  <meta name="description" content="Mittal Industries supplies a broad range of premium metal powders and specialised industrial materials, supported by established partnerships with leading manufacturers.">
   <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-
   <style>
-    /* Distribution page — local refinements only */
-    .distribution-hero {
-      padding: 126px 8% 118px;
+    .distribution-hero { padding: 126px 8% 118px; }
+    .distribution-hero::after { content:'MI'; position:absolute; right:7%; top:50%; transform:translateY(-50%); font-size:clamp(160px,25vw,380px); font-weight:700; letter-spacing:-.12em; color:rgba(255,255,255,.035); line-height:1; pointer-events:none; }
+    .distribution-container { display:grid; grid-template-columns:minmax(0,1.15fr) minmax(260px,.85fr); gap:80px; align-items:end; }
+    .distribution-side-note { padding:28px 0 4px 34px; border-left:1px solid rgba(255,255,255,.28); color:rgba(255,255,255,.68); font-size:14px; line-height:1.8; max-width:360px; }
+    .distribution-side-note strong { display:block; margin-bottom:10px; color:#fff; font-size:12px; letter-spacing:2px; text-transform:uppercase; }
+    .distribution-intro { display:grid; grid-template-columns:minmax(0,1fr) 260px; gap:70px; align-items:end; max-width:none; margin-bottom:64px; }
+    .distribution-intro-copy { max-width:800px; }
+    .network-marker { padding-top:8px; border-top:1px solid var(--mi-line); }
+    .network-marker strong { display:block; color:var(--mi-green); font-size:42px; line-height:1; margin-bottom:8px; letter-spacing:-1px; }
+    .network-marker span { color:var(--mi-muted); font-size:12px; font-weight:600; letter-spacing:1.5px; text-transform:uppercase; }
+    .brand-network { border-top:1px solid var(--mi-line); border-bottom:1px solid var(--mi-line); display:grid; grid-template-columns:repeat(4,1fr); }
+    .brand-network a { min-height:220px; padding:28px; display:flex; flex-direction:column; justify-content:space-between; text-decoration:none; background:#fff; position:relative; border-right:1px solid var(--mi-line); border-bottom:1px solid var(--mi-line); overflow:hidden; transition:background .35s ease; }
+    .brand-network a:nth-child(4n) { border-right:none; }
+    .brand-network a:nth-last-child(-n+3) { border-bottom:none; }
+    .brand-network a::before { content:''; position:absolute; left:28px; top:26px; width:30px; height:2px; background:var(--mi-green); transform:scaleX(0); transform-origin:left; transition:transform .35s ease; }
+    .brand-network a:hover { background:#f8faf8; }
+    .brand-network a:hover::before { transform:scaleX(1); }
+    .brand-logo-wrap { height:104px; display:flex; align-items:center; justify-content:center; margin:18px 0 22px; }
+    .brand-network img { width:100%; height:88px; object-fit:contain; filter:grayscale(100%); opacity:.86; transition:filter .35s ease,opacity .35s ease,transform .35s ease; }
+    .brand-network a:hover img { filter:grayscale(0%); opacity:1; transform:scale(1.035); }
+    .brand-meta { display:flex; justify-content:space-between; align-items:center; gap:14px; color:var(--mi-muted); font-size:11px; font-weight:600; letter-spacing:1.2px; text-transform:uppercase; }
+    .brand-meta .brand-arrow { color:var(--mi-green); font-size:18px; line-height:1; transition:transform .25s ease; }
+    .brand-network a:hover .brand-arrow { transform:translateX(5px); }
+    .network-note { margin-top:92px; padding:0; background:none; border:none; display:grid; grid-template-columns:.85fr 1.15fr; gap:90px; align-items:start; }
+    .network-note-heading { position:sticky; top:30px; }
+    .network-note h2 { margin:0 0 18px; font-size:clamp(32px,4vw,46px); line-height:1.15; }
+    .network-note-heading p { margin:0; color:var(--mi-muted); line-height:1.8; }
+    .network-values { display:grid; gap:0; border-top:1px solid var(--mi-line); }
+    .network-value { padding:26px 0; border-bottom:1px solid var(--mi-line); display:grid; grid-template-columns:72px 1fr; gap:24px; }
+    .network-value span { color:var(--mi-green); font-size:12px; font-weight:700; letter-spacing:1.5px; }
+    .network-value h3 { margin:0 0 8px; font-size:20px; color:var(--mi-ink); }
+    .network-value p { margin:0; color:var(--mi-muted); line-height:1.75; font-size:14px; }
+    .network-closing { margin-top:92px; padding:72px 8%; background:var(--mi-green-soft); border-top:1px solid rgba(20,91,54,.08); border-bottom:1px solid rgba(20,91,54,.08); text-align:center; }
+    .network-closing-inner { max-width:800px; margin:0 auto; }
+    .network-closing span { color:var(--mi-green); font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; }
+    .network-closing h2 { margin:14px 0 18px; color:var(--mi-green-dark); font-size:clamp(32px,4vw,48px); line-height:1.18; }
+    .network-closing p { margin:0 auto 28px; color:var(--mi-muted); line-height:1.85; }
+    .network-link { color:var(--mi-green); font-weight:700; text-decoration:none; border-bottom:1px solid rgba(20,91,54,.35); padding-bottom:5px; }
+    footer { margin-top:0; }
+    @media(max-width:980px){
+      .distribution-container,.distribution-intro,.network-note { grid-template-columns:1fr; gap:42px; }
+      .distribution-side-note { max-width:560px; }
+      .brand-network { grid-template-columns:repeat(2,1fr); }
+      .brand-network a:nth-child(4n) { border-right:1px solid var(--mi-line); }
+      .brand-network a:nth-child(2n) { border-right:none; }
+      .brand-network a:nth-last-child(-n+3) { border-bottom:1px solid var(--mi-line); }
+      .brand-network a:last-child { border-bottom:none; }
+      .network-note-heading { position:static; }
     }
-
-    .distribution-hero::after {
-      content: 'MI';
-      position: absolute;
-      right: 7%;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: clamp(160px, 25vw, 380px);
-      font-weight: 700;
-      letter-spacing: -0.12em;
-      color: rgba(255,255,255,0.035);
-      line-height: 1;
-      pointer-events: none;
-    }
-
-    .distribution-container {
-      display: grid;
-      grid-template-columns: minmax(0, 1.15fr) minmax(260px, 0.85fr);
-      gap: 80px;
-      align-items: end;
-    }
-
-    .distribution-side-note {
-      padding: 28px 0 4px 34px;
-      border-left: 1px solid rgba(255,255,255,0.28);
-      color: rgba(255,255,255,0.68);
-      font-size: 14px;
-      line-height: 1.8;
-      max-width: 340px;
-    }
-
-    .distribution-side-note strong {
-      display: block;
-      margin-bottom: 10px;
-      color: #fff;
-      font-size: 12px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-
-    .distribution-intro {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) 260px;
-      gap: 70px;
-      align-items: end;
-      max-width: none;
-      margin-bottom: 64px;
-    }
-
-    .distribution-intro-copy {
-      max-width: 760px;
-    }
-
-    .network-marker {
-      padding-top: 8px;
-      border-top: 1px solid var(--mi-line);
-    }
-
-    .network-marker strong {
-      display: block;
-      color: var(--mi-green);
-      font-size: 42px;
-      line-height: 1;
-      margin-bottom: 8px;
-      letter-spacing: -1px;
-    }
-
-    .network-marker span {
-      color: var(--mi-muted);
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-    }
-
-    .brand-network {
-      border-top: 1px solid var(--mi-line);
-      border-bottom: 1px solid var(--mi-line);
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-    }
-
-    .brand-network a {
-      min-height: 220px;
-      padding: 28px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      text-decoration: none;
-      background: #fff;
-      position: relative;
-      border-right: 1px solid var(--mi-line);
-      border-bottom: 1px solid var(--mi-line);
-      overflow: hidden;
-      transition: background 0.35s ease, transform 0.35s ease;
-    }
-
-    .brand-network a:nth-child(4n) {
-      border-right: none;
-    }
-
-    .brand-network a:nth-last-child(-n + 3) {
-      border-bottom: none;
-    }
-
-    .brand-network a::before {
-      content: '';
-      position: absolute;
-      left: 28px;
-      top: 26px;
-      width: 30px;
-      height: 2px;
-      background: var(--mi-green);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.35s ease;
-    }
-
-    .brand-network a:hover {
-      background: #f8faf8;
-    }
-
-    .brand-network a:hover::before {
-      transform: scaleX(1);
-    }
-
-    .brand-logo-wrap {
-      height: 104px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 18px 0 22px;
-    }
-
-    .brand-network img {
-      width: 100%;
-      height: 88px;
-      object-fit: contain;
-      filter: grayscale(100%);
-      opacity: 0.86;
-      transition: filter 0.35s ease, opacity 0.35s ease, transform 0.35s ease;
-    }
-
-    .brand-network a:hover img {
-      filter: grayscale(0%);
-      opacity: 1;
-      transform: scale(1.035);
-    }
-
-    .brand-meta {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 14px;
-      color: var(--mi-muted);
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 1.4px;
-      text-transform: uppercase;
-    }
-
-    .brand-meta .brand-arrow {
-      color: var(--mi-green);
-      font-size: 18px;
-      line-height: 1;
-      transition: transform 0.25s ease;
-    }
-
-    .brand-network a:hover .brand-arrow {
-      transform: translateX(5px);
-    }
-
-    .network-note {
-      margin-top: 92px;
-      padding: 0;
-      background: none;
-      border: none;
-      display: grid;
-      grid-template-columns: 0.85fr 1.15fr;
-      gap: 90px;
-      align-items: start;
-    }
-
-    .network-note-heading {
-      position: sticky;
-      top: 30px;
-    }
-
-    .network-note h2 {
-      margin: 0 0 18px;
-      font-size: clamp(32px, 4vw, 46px);
-      line-height: 1.15;
-    }
-
-    .network-note-heading p {
-      margin: 0;
-      color: var(--mi-muted);
-      line-height: 1.8;
-    }
-
-    .network-values {
-      display: grid;
-      gap: 0;
-      border-top: 1px solid var(--mi-line);
-    }
-
-    .network-value {
-      padding: 26px 0;
-      border-bottom: 1px solid var(--mi-line);
-      display: grid;
-      grid-template-columns: 72px 1fr;
-      gap: 24px;
-    }
-
-    .network-value span {
-      color: var(--mi-green);
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-    }
-
-    .network-value h3 {
-      margin: 0 0 8px;
-      font-size: 20px;
-      color: var(--mi-ink);
-    }
-
-    .network-value p {
-      margin: 0;
-      color: var(--mi-muted);
-      line-height: 1.75;
-      font-size: 14px;
-    }
-
-    .network-closing {
-      margin-top: 92px;
-      padding: 72px 8%;
-      background: var(--mi-green-soft);
-      border-top: 1px solid rgba(20,91,54,0.08);
-      border-bottom: 1px solid rgba(20,91,54,0.08);
-      text-align: center;
-    }
-
-    .network-closing-inner {
-      max-width: 760px;
-      margin: 0 auto;
-    }
-
-    .network-closing span {
-      color: var(--mi-green);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-
-    .network-closing h2 {
-      margin: 14px 0 18px;
-      color: var(--mi-green-dark);
-      font-size: clamp(32px, 4vw, 48px);
-      line-height: 1.18;
-    }
-
-    .network-closing p {
-      margin: 0 auto 28px;
-      color: var(--mi-muted);
-      line-height: 1.85;
-    }
-
-    .network-link {
-      color: var(--mi-green);
-      font-weight: 700;
-      text-decoration: none;
-      border-bottom: 1px solid rgba(20,91,54,0.35);
-      padding-bottom: 5px;
-    }
-
-    @media (max-width: 980px) {
-      .distribution-container,
-      .distribution-intro,
-      .network-note {
-        grid-template-columns: 1fr;
-        gap: 42px;
-      }
-
-      .distribution-side-note {
-        max-width: 560px;
-      }
-
-      .brand-network {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .brand-network a:nth-child(4n) {
-        border-right: 1px solid var(--mi-line);
-      }
-
-      .brand-network a:nth-child(2n) {
-        border-right: none;
-      }
-
-      .brand-network a:nth-last-child(-n + 3) {
-        border-bottom: 1px solid var(--mi-line);
-      }
-
-      .brand-network a:nth-last-child(-n + 1) {
-        border-bottom: none;
-      }
-
-      .network-note-heading {
-        position: static;
-      }
-    }
-
-    @media (max-width: 620px) {
-      .distribution-hero {
-        padding: 90px 7% 82px;
-      }
-
-      .distribution-container {
-        gap: 30px;
-      }
-
-      .distribution-side-note {
-        padding-left: 22px;
-      }
-
-      .distribution-content {
-        padding: 68px 20px 82px;
-      }
-
-      .distribution-intro {
-        margin-bottom: 42px;
-      }
-
-      .brand-network {
-        grid-template-columns: 1fr;
-      }
-
-      .brand-network a,
-      .brand-network a:nth-child(2n),
-      .brand-network a:nth-child(4n) {
-        border-right: none;
-        border-bottom: 1px solid var(--mi-line);
-      }
-
-      .brand-network a:last-child {
-        border-bottom: none;
-      }
-
-      .brand-network a {
-        min-height: 190px;
-      }
-
-      .network-note {
-        margin-top: 68px;
-        gap: 42px;
-      }
-
-      .network-closing {
-        margin-top: 68px;
-        padding: 58px 24px;
-      }
+    @media(max-width:620px){
+      .distribution-hero { padding:90px 7% 82px; }
+      .distribution-side-note { padding-left:22px; }
+      .distribution-content { padding:68px 20px 82px; }
+      .brand-network { grid-template-columns:1fr; }
+      .brand-network a,.brand-network a:nth-child(2n),.brand-network a:nth-child(4n) { border-right:none; border-bottom:1px solid var(--mi-line); }
+      .brand-network a:last-child { border-bottom:none; }
+      .brand-network a { min-height:190px; }
+      .network-note { margin-top:68px; gap:42px; }
+      .network-closing { margin-top:68px; padding:58px 24px; }
     }
   </style>
 </head>
-
 <body>
 
 <header>
-  <a href="index.html" aria-label="Mittal Industries Home">
-    <img src="images/logo.png" alt="Mittal Industries Logo">
-  </a>
+  <a href="index.html" aria-label="Mittal Industries Home"><img src="images/logo.png" alt="Mittal Industries Logo"></a>
   <nav aria-label="Primary navigation">
     <a href="index.html">Home</a>
     <a href="about.html">About Us</a>
@@ -399,16 +87,13 @@
 <section class="distribution-hero">
   <div class="distribution-container">
     <div>
-      <div class="distribution-kicker">Authorized Partnerships Since 1994</div>
-      <h1>Global material expertise. One trusted Indian partner.</h1>
-      <p>
-        Mittal Industries brings together respected industrial manufacturers and the customers who depend on their materials. Our distribution network is built around quality, continuity and relationships that last.
-      </p>
+      <div class="distribution-kicker">Established 1994 · Material Expertise</div>
+      <h1>More than a distribution network. A source for serious materials.</h1>
+      <p>Mittal Industries supplies premium industrial raw materials through a combination of deep application knowledge, established manufacturer relationships and a broad sourcing capability built over decades.</p>
     </div>
-
     <div class="distribution-side-note">
-      <strong>Our Approach</strong>
-      We do not build a portfolio by collecting brands. We build it by representing materials we can stand behind and partnerships we intend to maintain.
+      <strong>Our Position</strong>
+      Our partnerships strengthen what we can offer. They sit within a much broader capability: helping manufacturers find the right material, grade and supply solution for demanding applications.
     </div>
   </div>
 </section>
@@ -416,115 +101,72 @@
 <main class="distribution-content">
   <section class="distribution-intro">
     <div class="distribution-intro-copy">
-      <h2>Selected partnerships. Serious materials.</h2>
-      <p>
-        Every manufacturer represented by Mittal Industries adds a distinct capability to our portfolio. Together, these partnerships help us serve customers across metal powders, diamond tool raw materials, polymers, additives and specialised industrial bonding systems.
-      </p>
+      <h2>A portfolio built around materials, not just brands.</h2>
+      <p>Our network spans metal powders, tungsten-based materials, diamond tool raw materials, polymers and specialised industrial materials. Alongside our authorised partnerships, we can source a wide range of metal powders and application-specific materials according to specification and requirement.</p>
     </div>
-
-    <div class="network-marker">
-      <strong>07</strong>
-      <span>Brands represented</span>
-    </div>
+    <div class="network-marker"><strong>07</strong><span>Established brand partnerships</span></div>
   </section>
 
-  <section class="brand-network" aria-label="Authorized brands">
+  <section class="brand-network" aria-label="Mittal Industries material partners">
     <a href="products.html#covestro" aria-label="View Covestro products">
       <div class="brand-logo-wrap"><img src="images/covestro.png" alt="Covestro"></div>
-      <div class="brand-meta"><span>Polymers & Materials</span><span class="brand-arrow">→</span></div>
+      <div class="brand-meta"><span>TPU & Polymers</span><span class="brand-arrow">→</span></div>
     </a>
-
     <a href="products.html#mepco" aria-label="View Mepco products">
       <div class="brand-logo-wrap"><img src="images/mepco.png" alt="Mepco"></div>
-      <div class="brand-meta"><span>Metal Powders</span><span class="brand-arrow">→</span></div>
+      <div class="brand-meta"><span>Bronze & Brass Powders</span><span class="brand-arrow">→</span></div>
     </a>
-
     <a href="products.html#rapicut" aria-label="View Rapicut products">
       <div class="brand-logo-wrap"><img src="images/rapicut.png" alt="Rapicut"></div>
-      <div class="brand-meta"><span>Diamond Tool Materials</span><span class="brand-arrow">→</span></div>
+      <div class="brand-meta"><span>Tungsten & Tungsten Carbide</span><span class="brand-arrow">→</span></div>
     </a>
-
     <a href="products.html#imp" aria-label="View IMP products">
       <div class="brand-logo-wrap"><img src="images/imp.png" alt="IMP"></div>
-      <div class="brand-meta"><span>Industrial Materials</span><span class="brand-arrow">→</span></div>
+      <div class="brand-meta"><span>Electrolytic Iron Powders</span><span class="brand-arrow">→</span></div>
     </a>
-
     <a href="products.html#petrelplus" aria-label="View PetrelPlus products">
       <div class="brand-logo-wrap"><img src="images/petrelplus.png" alt="PetrelPlus"></div>
-      <div class="brand-meta"><span>Specialty Solutions</span><span class="brand-arrow">→</span></div>
+      <div class="brand-meta"><span>Specialised Materials</span><span class="brand-arrow">→</span></div>
     </a>
-
     <a href="products.html#hoganas" aria-label="View Höganäs products">
       <div class="brand-logo-wrap"><img src="images/hoganas.png" alt="Höganäs"></div>
-      <div class="brand-meta"><span>Powder Metallurgy</span><span class="brand-arrow">→</span></div>
+      <div class="brand-meta"><span>Atomised Iron Powders</span><span class="brand-arrow">→</span></div>
     </a>
-
     <a href="products.html#cilbond" aria-label="View Cilbond products">
       <div class="brand-logo-wrap"><img src="images/cilbond.png" alt="Cilbond"></div>
-      <div class="brand-meta"><span>Industrial Adhesives</span><span class="brand-arrow">→</span></div>
+      <div class="brand-meta"><span>Industrial Materials</span><span class="brand-arrow">→</span></div>
     </a>
   </section>
 
   <section class="network-note">
     <div class="network-note-heading">
-      <h2>More than a collection of logos.</h2>
-      <p>
-        The value of a strong distribution network is measured by what it delivers to the customer after the order is placed.
-      </p>
+      <h2>What customers actually rely on.</h2>
+      <p>The strength of Mittal Industries is not defined by a logo sheet. It is defined by the ability to understand an application, identify the right material and maintain dependable supply.</p>
     </div>
-
     <div class="network-values">
-      <article class="network-value">
-        <span>01</span>
-        <div>
-          <h3>Trusted sourcing</h3>
-          <p>Materials sourced through established relationships with manufacturers and authorised supply channels.</p>
-        </div>
-      </article>
-
-      <article class="network-value">
-        <span>02</span>
-        <div>
-          <h3>Continuity of supply</h3>
-          <p>A distribution model built to support repeat requirements and long-term industrial demand.</p>
-        </div>
-      </article>
-
-      <article class="network-value">
-        <span>03</span>
-        <div>
-          <h3>Technical confidence</h3>
-          <p>A carefully developed portfolio helps customers source materials suited to serious manufacturing applications.</p>
-        </div>
-      </article>
-
-      <article class="network-value">
-        <span>04</span>
-        <div>
-          <h3>One point of accountability</h3>
-          <p>Mittal Industries remains the local partner focused on responsiveness, service and the long-term relationship.</p>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <section class="network-closing">
-    <div class="network-closing-inner">
-      <span>Explore the portfolio</span>
-      <h2>One network. Multiple material capabilities.</h2>
-      <p>
-        Discover the industrial materials represented by Mittal Industries, or contact us directly for a requirement that goes beyond the products displayed online.
-      </p>
-      <a class="network-link" href="products.html">View Product Portfolio →</a>
+      <article class="network-value"><span>01</span><div><h3>Broad material capability</h3><p>Our offering extends across a wide range of ferrous, non-ferrous, tungsten-based and specialised metal powders, alongside polymers and other industrial materials.</p></div></article>
+      <article class="network-value"><span>02</span><div><h3>Application-led sourcing</h3><p>We focus on the material requirement first—grade, chemistry, particle characteristics, performance and consistency—then identify the appropriate supply route.</p></div></article>
+      <article class="network-value"><span>03</span><div><h3>Established manufacturer relationships</h3><p>Long-standing relationships with respected global and Indian manufacturers strengthen our ability to offer dependable quality and continuity.</p></div></article>
+      <article class="network-value"><span>04</span><div><h3>Quality before volume</h3><p>Our reputation has been built by choosing materials we can stand behind rather than by simply increasing the number of products on a catalogue.</p></div></article>
     </div>
   </section>
 </main>
 
-<a href="https://wa.me/919680023458" class="whatsapp-float" target="_blank" rel="noopener">WhatsApp Us</a>
+<section class="network-closing">
+  <div class="network-closing-inner">
+    <span>Looking for a specific material?</span>
+    <h2>If it is a serious industrial requirement, talk to us.</h2>
+    <p>Tell us the application, specification or grade you need. Our material network and sourcing capability extend well beyond the products represented on this page.</p>
+    <a class="network-link" href="contact.html">Discuss Your Requirement →</a>
+  </div>
+</section>
 
 <footer>
   <strong>Mittal Industries</strong><br>
   Premium Industrial Raw Materials Supplier Since 1994<br><br>
+  📍 2 Krishna Vihar, Gopalpura Bypass, Jaipur, Rajasthan, India<br>
+  📞 +91 9680023458 | +91 9414043956<br>
+  ✉️ mittalindustries.ayush@gmail.com<br><br>
   © 1994–2026 Mittal Industries. All Rights Reserved.
 </footer>
 
