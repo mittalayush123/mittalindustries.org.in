@@ -2,332 +2,207 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Products | Mittal Industries</title>
+<title>Industrial Raw Materials & Products | Mittal Industries</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta name="description" content="Explore industrial raw materials supplied by Mittal Industries, including TPU systems, metal powders, industrial adhesives, diamond tool materials and specialty solutions.">
+<link rel="icon" type="image/svg+xml" href="images/favicon.svg">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 
 <style>
+* { box-sizing: border-box; }
 
-/* ===== GLOBAL ===== */
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-  scroll-behavior: smooth;
-}
-
-body {
-  background: #ffffff;
-  color: #111;
-  overflow-x: hidden;
-}
-
-/* ===== HEADER STRIP ===== */
-
-.page-header {
-  padding: 120px 8% 80px;
-  background: linear-gradient(135deg, #0f1f16, #1e5f36);
+.products-hero {
+  padding: 105px 8% 95px;
+  background: linear-gradient(135deg, #0d2416, #1d5f39);
   color: #fff;
   position: relative;
+  overflow: hidden;
 }
 
-.page-header::after {
-  content: "";
+.products-hero::after {
+  content: '';
   position: absolute;
-  bottom: -60px;
-  left: 0;
-  width: 100%;
-  height: 60px;
-  background: #ffffff;
-  border-top-left-radius: 80px;
+  width: 560px;
+  height: 560px;
+  right: -160px;
+  top: -260px;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 50%;
+  box-shadow: 0 0 0 90px rgba(255,255,255,0.025), 0 0 0 180px rgba(255,255,255,0.018);
 }
 
-.page-header h1 {
-  font-size: 48px;
-  font-weight: 600;
-  letter-spacing: 1px;
-}
-
-/* ===== PRODUCT SECTION ===== */
+.products-hero-inner { max-width: 1180px; margin: 0 auto; position: relative; z-index: 1; }
+.products-kicker { display: block; margin-bottom: 18px; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; color: rgba(255,255,255,0.68); }
+.products-hero h1 { margin: 0 0 18px; max-width: 850px; font-size: clamp(42px, 5vw, 64px); line-height: 1.1; }
+.products-hero p { max-width: 720px; margin: 0; font-size: 17px; line-height: 1.85; color: rgba(255,255,255,0.84); }
 
 .product-section {
-  padding: 120px 8%;
+  padding: 110px 8%;
   position: relative;
   opacity: 0;
-  transform: translateY(60px);
-  transition: all 1s ease;
-  overflow: hidden; /* Needed for watermark */
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  overflow: hidden;
 }
 
-/* WATERMARK BASE */
+.product-section.visible { opacity: 1; transform: translateY(0); }
+.product-section:nth-of-type(even) { background: #f8faf8; }
+
 .product-section::after {
-  content: "";
+  content: '';
   position: absolute;
   top: 50%;
-  left: 50%;
-  width: 60%;
-  height: 60%;
+  left: 70%;
+  width: min(520px, 50vw);
+  height: min(340px, 50vw);
   transform: translate(-50%, -50%);
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  opacity: 0.15; /* 15% opacity */
+  opacity: 0.07;
   z-index: 0;
   pointer-events: none;
 }
 
-/* Keep content above watermark */
-.product-section > * {
-  position: relative;
-  z-index: 2;
+.product-section > * { position: relative; z-index: 1; }
+.product-section::before { content: ''; position: absolute; left: 8%; top: 76px; width: 54px; height: 3px; background: #145b36; }
+.product-section h2 { max-width: 1180px; margin: 0 auto 44px; font-size: clamp(34px, 4vw, 48px); color: #145b36; }
+.product-block { max-width: 820px; margin: 0 auto 48px; transition: transform 0.3s ease; }
+.product-block:hover { transform: translateX(8px); }
+.product-block h3 { margin: 0 0 13px; font-size: 25px; color: #18231b; }
+.product-block p { margin: 0 0 20px; font-size: 16px; line-height: 1.85; color: #5f6962; }
+
+.enquire-btn { display: inline-flex; padding: 12px 24px; border: 1px solid #145b36; color: #145b36; text-decoration: none; font-weight: 600; border-radius: 5px; transition: all 0.25s ease; }
+.enquire-btn:hover { background: #145b36; color: #fff; transform: translateY(-2px); box-shadow: 0 10px 24px rgba(20,91,54,0.15); }
+
+#covestro::after { background-image: url('images/covestro.png'); }
+#mepco::after { background-image: url('images/mepco.png'); }
+#rapicut::after { background-image: url('images/rapicut.png'); }
+#imp::after { background-image: url('images/imp.png'); }
+#petrelplus::after { background-image: url('images/petrelplus.png'); }
+#hoganas::after { background-image: url('images/hoganas.png'); }
+#cilbond::after { background-image: url('images/cilbond.png'); }
+
+@media (max-width: 760px) {
+  .products-hero { padding: 82px 24px; }
+  .product-section { padding: 88px 24px; }
+  .product-section::before { left: 24px; top: 58px; }
+  .product-section::after { left: 50%; width: 78vw; height: 260px; opacity: 0.055; }
 }
-
-.product-section.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Alternating Background */
-.product-section:nth-child(even) {
-  background: #f8f9f8;
-}
-
-/* Accent line */
-.product-section::before {
-  content: "";
-  position: absolute;
-  left: 8%;
-  top: 80px;
-  width: 60px;
-  height: 4px;
-  background: #1e5f36;
-  z-index: 3;
-}
-
-.product-section h2 {
-  font-size: 38px;
-  margin-bottom: 50px;
-  color: #1e5f36;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-}
-
-/* ===== WATERMARK IMAGES ===== */
-
-#covestro::after {
-  background-image: url("images/covestro.png");
-}
-
-#mepco::after {
-  background-image: url("images/mepco.png");
-}
-
-#rapicut::after {
-  background-image: url("images/rapicut.png");
-}
-
-#imp::after {
-  background-image: url("images/imp.png");
-}
-
-#petrelplus::after {
-  background-image: url("images/petrelplus.png");
-}
-
-#hognas::after {
-  background-image: url("images/hognas.png");
-}
-
-#cilbond::after {
-  background-image: url("images/cilbond.png");
-}
-
-/* ===== PRODUCT BLOCK ===== */
-
-.product-block {
-  margin-bottom: 60px;
-  max-width: 900px;
-  transition: transform 0.4s ease;
-}
-
-.product-block:hover {
-  transform: translateX(10px);
-}
-
-.product-block h3 {
-  font-size: 26px;
-  margin-bottom: 15px;
-  font-weight: 600;
-}
-
-.product-block p {
-  font-size: 17px;
-  line-height: 1.7;
-  color: #555;
-  margin-bottom: 18px;
-}
-
-/* ===== BUTTON ===== */
-
-.enquire-btn {
-  display: inline-block;
-  padding: 12px 26px;
-  border: 1px solid #1e5f36;
-  color: #1e5f36;
-  text-decoration: none;
-  font-weight: 500;
-  border-radius: 4px;
-  transition: all 0.3s ease;
-}
-
-.enquire-btn:hover {
-  background: #1e5f36;
-  color: #fff;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-}
-
-/* ===== RESPONSIVE ===== */
-
-@media(max-width:768px){
-
-  .page-header h1 {
-    font-size: 32px;
-  }
-
-  .product-section {
-    padding: 80px 6%;
-  }
-
-  .product-section::before {
-    left: 6%;
-  }
-}
-
 </style>
 </head>
 
 <body>
 
-<div class="page-header">
-  <h1>Our Product Portfolio</h1>
-</div>
+<header>
+  <a href="index.html" aria-label="Mittal Industries Home">
+    <img src="images/logo.png" alt="Mittal Industries Logo">
+  </a>
+  <nav aria-label="Primary navigation">
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a class="active" href="products.html">Products</a>
+    <a href="distribution.html">Distribution Chain</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
 
-<!-- COVESTRO -->
+<section class="products-hero">
+  <div class="products-hero-inner">
+    <span class="products-kicker">Mittal Industries</span>
+    <h1>Our Product Portfolio</h1>
+    <p>A focused portfolio of industrial raw materials, metal powders, specialty polymers and bonding solutions supplied with an emphasis on quality, continuity and performance.</p>
+  </div>
+</section>
+
 <section class="product-section" id="covestro">
   <h2>Covestro</h2>
-
   <div class="product-block">
     <h3>Thermoplastic Polyurethane Systems</h3>
-    <p>
-      High-performance TPU materials engineered for demanding industrial environments.
-    </p>
+    <p>High-performance TPU materials engineered for demanding industrial environments where durability, elasticity and structural integrity are critical.</p>
     <a href="contact.html" class="enquire-btn">Enquire Now</a>
   </div>
-
   <div class="product-block">
     <h3>Specialty Grades</h3>
-    <p>
-      Advanced TPU and polycarbonate solutions designed for precision manufacturing.
-    </p>
+    <p>Advanced TPU and polycarbonate solutions designed for precision manufacturing and high-performance industrial applications.</p>
     <a href="contact.html" class="enquire-btn">Enquire Now</a>
   </div>
 </section>
 
-<!-- MEPCO -->
 <section class="product-section" id="mepco">
   <h2>Mepco</h2>
   <div class="product-block">
     <h3>Metal Powders</h3>
-    <p>
-      High-purity powders developed for diamond tool production.
-    </p>
+    <p>High-purity metal powders developed for demanding manufacturing and diamond tool applications where consistency and metallurgical performance matter.</p>
     <a href="contact.html" class="enquire-btn">Enquire Now</a>
   </div>
 </section>
 
-<!-- RAPICUT -->
 <section class="product-section" id="rapicut">
   <h2>Rapicut</h2>
   <div class="product-block">
-    <h3>Diamond Cutting Solutions</h3>
-    <p>
-      Performance-driven materials supporting advanced cutting operations.
-    </p>
+    <h3>Diamond Cutting Materials</h3>
+    <p>Performance-driven raw materials supporting advanced cutting, grinding and finishing operations across industrial applications.</p>
     <a href="contact.html" class="enquire-btn">Enquire Now</a>
   </div>
 </section>
 
-<!-- IMP -->
 <section class="product-section" id="imp">
   <h2>IMP</h2>
   <div class="product-block">
-    <h3>Industrial Raw Materials</h3>
-    <p>
-      Reliable, high-grade industrial raw materials.
-    </p>
+    <h3>Industrial Iron Powders</h3>
+    <p>Reliable, high-grade industrial powder solutions supporting consistent and scalable manufacturing requirements.</p>
     <a href="contact.html" class="enquire-btn">Enquire Now</a>
   </div>
 </section>
 
-<!-- PETRELPLUS -->
 <section class="product-section" id="petrelplus">
-  <h2>Petrelplus</h2>
+  <h2>PetrelPlus</h2>
   <div class="product-block">
-    <h3>Advanced Additives & Solutions</h3>
-    <p>
-      Innovative additive technologies tailored for enhanced performance.
-    </p>
+    <h3>Specialty Industrial Lubricants</h3>
+    <p>Specialty lubricant solutions developed to support dependable equipment performance, durability and industrial efficiency.</p>
     <a href="contact.html" class="enquire-btn">Enquire Now</a>
   </div>
 </section>
 
-<!-- HOGANAS -->
-<section class="product-section" id="hognas">
+<section class="product-section" id="hoganas">
   <h2>Höganäs</h2>
   <div class="product-block">
     <h3>Metal Powder Technologies</h3>
-    <p>
-      Globally trusted powder metallurgy solutions.
-    </p>
+    <p>Globally trusted powder metallurgy solutions engineered for high-performance structural, tooling and industrial applications.</p>
     <a href="contact.html" class="enquire-btn">Enquire Now</a>
   </div>
 </section>
 
-<!-- CILBOND -->
 <section class="product-section" id="cilbond">
   <h2>Cilbond</h2>
   <div class="product-block">
     <h3>Industrial Grade Adhesives</h3>
-    <p>
-      High temperature adhesives for metal to TPU bonding.
-    </p>
+    <p>High-temperature industrial adhesive solutions for demanding metal-to-TPU bonding applications.</p>
     <a href="contact.html" class="enquire-btn">Enquire Now</a>
   </div>
 </section>
 
+<a href="https://wa.me/919680023458" class="whatsapp-float" target="_blank" rel="noopener">WhatsApp Us</a>
+
+<footer>
+  <strong>Mittal Industries</strong><br>
+  Premium Industrial Raw Materials Supplier Since 1994<br><br>
+  © 1994–2026 Mittal Industries. All Rights Reserved.
+</footer>
+
 <script>
-
-/* ===== SCROLL REVEAL ===== */
-
 const sections = document.querySelectorAll('.product-section');
-
-function revealSections() {
-  const trigger = window.innerHeight * 0.85;
-
-  sections.forEach(section => {
-    const top = section.getBoundingClientRect().top;
-    if (top < trigger) {
-      section.classList.add('visible');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
     }
   });
-}
-
-window.addEventListener('scroll', revealSections);
-window.addEventListener('load', revealSections);
-
+}, { threshold: 0.12 });
+sections.forEach((section) => observer.observe(section));
 </script>
 
 </body>
