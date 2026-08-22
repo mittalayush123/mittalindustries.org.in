@@ -8,6 +8,7 @@
   <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="home.css">
 </head>
 
 <body>
@@ -28,30 +29,59 @@
 </header>
 
 <section class="hero">
+  <div class="home-eyebrow">Established 1994 · Jaipur, India</div>
   <h1>Mittal Industries</h1>
   <h2>India’s Trusted Diamond Tools Raw Materials Partner Since 1994</h2>
   <p>
-    Mittal Industries is a distinguished supplier of premium diamond tools and industrial raw materials, serving the industry with excellence since 1994. Built on trust, technical expertise and uncompromising quality, we stand among India’s respected suppliers in the industrial raw materials sector.
+    Supplying premium industrial and diamond tools raw materials with a disciplined focus on quality, reliability and long-term relationships. Our strength lies in understanding demanding applications and delivering materials our customers can depend on.
   </p>
-  <a href="distribution.html" class="cta-btn">View Our Distribution Network</a>
+  <div class="hero-actions">
+    <a href="products.html" class="cta-btn">Explore Our Products</a>
+    <a href="distribution.html" class="cta-btn-secondary">Our Distribution Network</a>
+  </div>
 </section>
 
 <section class="credibility">
   <div class="cred-box">
     <h3>Since 1994</h3>
-    <p>Three decades of industry experience and leadership.</p>
+    <p>Three decades of industry experience and disciplined growth.</p>
   </div>
   <div class="cred-box">
-    <h3>Robust Supply Infrastructure</h3>
-    <p>Reliable support for demanding and high-volume industrial requirements.</p>
+    <h3>Quality First</h3>
+    <p>Material selection driven by performance, consistency and trust.</p>
   </div>
   <div class="cred-box">
-    <h3>Nationwide Network</h3>
-    <p>Trusted distribution and long-term industrial relationships across India.</p>
+    <h3>Nationwide Relationships</h3>
+    <p>Long-term support for manufacturers and industrial partners across India.</p>
   </div>
 </section>
 
-<section class="industries">
+<section class="home-intro reveal-home">
+  <div>
+    <p class="home-kicker">What defines us</p>
+    <h2>Quiet confidence.<br><span>Serious materials.</span></h2>
+    <p>
+      We do not believe industrial supply is only about moving products. It is about understanding what a manufacturer needs, maintaining consistency over time and standing behind the quality of what we supply.
+    </p>
+  </div>
+
+  <div class="home-principles">
+    <div class="principle">
+      <strong>Quality without compromise</strong>
+      <span>We focus on products and grades that meet demanding industrial requirements.</span>
+    </div>
+    <div class="principle">
+      <strong>Strong distribution partnerships</strong>
+      <span>Our portfolio is strengthened by respected manufacturers and specialized industrial brands.</span>
+    </div>
+    <div class="principle">
+      <strong>Relationships built to last</strong>
+      <span>Our business has grown through reliability, continuity and the trust of the people we serve.</span>
+    </div>
+  </div>
+</section>
+
+<section class="industries reveal-home">
   <div class="container">
     <h2>Industries We Serve</h2>
     <div class="industry-grid">
@@ -75,15 +105,27 @@
   </div>
 </section>
 
-<section class="section">
-  <h3>Built on a Legacy of Trust</h3>
-  <p>
-    Founded and single-handedly built by <strong>Mr. Surendra Mittal</strong>, Mittal Industries has grown through perseverance, industry understanding and a disciplined commitment to quality. What began as an entrepreneurial vision in 1994 has evolved into a trusted industrial supply business serving manufacturers across India.
-  </p>
+<section class="home-legacy reveal-home">
+  <div class="home-legacy-inner">
+    <div>
+      <p class="home-kicker">Our foundation</p>
+      <h2>Built from the ground up. Sustained by trust.</h2>
+      <p>
+        Founded and single-handedly built by <strong>Mr. Surendra Mittal</strong>, Mittal Industries began with determination, market understanding and a belief that quality should never be negotiable. Over the years, that discipline helped shape the company into a trusted industrial supply partner with relationships that continue to define our strength.
+      </p>
+    </div>
+
+    <div class="legacy-mark">
+      <span>"A company earns its reputation one commitment at a time."</span>
+      <strong>Mr. Surendra Mittal</strong>
+      <span>Founder, Mittal Industries</span>
+    </div>
+  </div>
 </section>
 
-<section class="section">
-  <h3>Our Distribution Chain</h3>
+<section class="section reveal-home">
+  <p class="home-kicker">Our network</p>
+  <h3>World-class products. Focused local support.</h3>
   <p>We represent respected industrial brands and connect their products with manufacturers through a focused, relationship-driven distribution network.</p>
   <div class="brands">
     <a href="products.html#covestro"><img src="images/covestro.png" alt="Covestro"></a>
@@ -96,10 +138,11 @@
   </div>
 </section>
 
-<section class="section" style="max-width:none; background:#f4f7f4; text-align:center; padding-top:95px; padding-bottom:95px;">
-  <h3 style="text-align:center;">Looking for Reliable Industrial Supply?</h3>
-  <p style="margin:0 auto 28px; text-align:center;">Partner with Mittal Industries for consistent quality, reliable sourcing and dependable industrial supply.</p>
-  <a href="contact.html" class="cta-btn">Request Business Enquiry</a>
+<section class="home-cta reveal-home">
+  <p class="home-kicker">Let's work together</p>
+  <h2>Looking for reliable industrial supply?</h2>
+  <p>Tell us what you need. Our team can help you identify the right product and connect you with the relevant material solution.</p>
+  <a href="contact.html" class="cta-btn">Start an Enquiry</a>
 </section>
 
 <footer>
@@ -110,6 +153,25 @@
   ✉️ mittalindustries.ayush@gmail.com<br><br>
   © 1994–2026 Mittal Industries. All Rights Reserved.
 </footer>
+
+<script>
+  const revealItems = document.querySelectorAll('.reveal-home');
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    revealItems.forEach((item) => observer.observe(item));
+  } else {
+    revealItems.forEach((item) => item.classList.add('is-visible'));
+  }
+</script>
 
 </body>
 </html>
