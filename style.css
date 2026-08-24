@@ -511,3 +511,8 @@ footer{background:#0d2f1c;color:rgba(255,255,255,.82);padding:58px 30px;font-siz
   .network-note { padding: 30px 24px; }
   .whatsapp-float { bottom: 18px; right: 18px; }
 }
+
+
+/* FOOTER LOGO — shared across all five pages */
+.footer-brand .footer-logo{display:block;width:210px;height:88px;object-fit:contain;object-position:left center}
+@media(max-width:560px){.footer-brand .footer-logo{width:190px;height:82px}}
