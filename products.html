@@ -149,7 +149,7 @@ html { scroll-behavior:smooth; }
 </section>
 
 <a href="https://wa.me/919680023458" class="whatsapp-float" target="_blank" rel="noopener">WhatsApp Us</a>
-<footer><strong>Mittal Industries</strong><br>Premium Industrial Raw Materials Supplier Since 1994<br><br></footer>
+<footer><div class="footer-grid"><div class="footer-brand"><strong>MITTAL INDUSTRIES</strong><span>Premium Industrial Raw Materials</span><em>Established 1994</em></div><div class="footer-block"><strong>Office</strong><p>2 Krishna Vihar, Gopalpura Bypass<br>Jaipur, Rajasthan, India</p></div><div class="footer-block"><strong>Factory</strong><p>H1-782, Sitapura Industrial Area<br>Jaipur, Rajasthan – 302022</p></div><div class="footer-block"><strong>Contact</strong><p>+91 9680023458<br>+91 9414043956<br>mittalindustries.ayush@gmail.com</p></div></div></footer>
 <script>
 const sections=document.querySelectorAll('.product-section');
 if('IntersectionObserver' in window){const observer=new IntersectionObserver((entries)=>{entries.forEach((entry)=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}})},{threshold:.12});sections.forEach((section)=>observer.observe(section));}else{sections.forEach((section)=>section.classList.add('visible'));}
