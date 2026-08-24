@@ -1,1 +1,69 @@
-PLACEHOLDER
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>About Mittal Industries | A Legacy Built Since 1994</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Learn about Mittal Industries, founded in 1994 by Mr. Surendra Mittal and built through decades of commitment to quality, trust and industrial supply excellence.">
+<link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+* { box-sizing: border-box; }
+.about-hero { min-height: 610px; padding: 130px 8% 110px; background: linear-gradient(120deg, rgba(10, 29, 18, 0.97), rgba(20, 83, 49, 0.92)); color: #fff; display: flex; align-items: center; position: relative; overflow: hidden; }
+.about-hero::before { content: "1994"; position: absolute; right: 7%; top: 50%; transform: translateY(-50%); font-size: clamp(180px, 28vw, 430px); font-weight: 700; line-height: 1; color: rgba(255,255,255,0.035); letter-spacing: -20px; pointer-events: none; }
+.about-hero-content { max-width: 900px; position: relative; z-index: 1; }
+.about-eyebrow { display: flex; align-items: center; gap: 14px; margin-bottom: 24px; color: rgba(255,255,255,0.72); font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; }
+.about-eyebrow::before { content: ""; width: 42px; height: 1px; background: #d8eadf; }
+.about-hero h1 { margin: 0 0 24px; font-size: clamp(48px, 6vw, 78px); line-height: 1.08; letter-spacing: -2px; font-weight: 600; max-width: 850px; }
+.about-hero p { max-width: 760px; margin: 0; color: rgba(255,255,255,0.78); font-size: 18px; line-height: 1.9; }
+.about-intro { max-width: 1240px; margin: 0 auto; padding: 125px 30px; display: grid; grid-template-columns: 0.75fr 1.25fr; gap: 100px; align-items: start; }
+.section-label { color: #1e5f36; font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 18px; }
+.about-intro h2,.story-section h2,.management-intro h2,.final-about-cta h2 { margin: 0; color: #172019; font-size: clamp(36px, 4vw, 56px); line-height: 1.15; letter-spacing: -1.4px; font-weight: 600; }
+.intro-copy p,.story-copy p,.management-intro p { margin: 0 0 24px; color: #59635c; font-size: 16px; line-height: 1.95; }
+.intro-copy p:last-child,.story-copy p:last-child { margin-bottom: 0; }
+.founder-statement { background: #f3f7f4; border-left: 4px solid #1e5f36; padding: 42px 48px; margin-top: 38px; color: #25332a; font-size: 20px; line-height: 1.75; }
+.legacy-strip { background: #102a1b; color: #fff; padding: 78px 30px; }
+.legacy-grid { max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 60px; }
+.legacy-item { border-top: 1px solid rgba(255,255,255,0.18); padding-top: 26px; }
+.legacy-item span { display: block; color: #8ebaa0; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 14px; font-weight: 600; }
+.legacy-item strong { display: block; font-size: 27px; line-height: 1.35; font-weight: 500; }
+.story-section { max-width: 1240px; margin: 0 auto; padding: 130px 30px; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 110px; align-items: start; }
+.story-copy { padding-top: 54px; }
+.timeline { border-left: 1px solid #d9e1dc; padding-left: 38px; }
+.timeline-item { position: relative; padding: 0 0 52px; }
+.timeline-item:last-child { padding-bottom: 0; }
+.timeline-item::before { content: ""; width: 11px; height: 11px; border-radius: 50%; background: #1e5f36; position: absolute; left: -44px; top: 8px; box-shadow: 0 0 0 7px #fff; }
+.timeline-year { color: #1e5f36; font-size: 13px; font-weight: 700; letter-spacing: 1.5px; margin-bottom: 9px; }
+.timeline-item h3 { margin: 0 0 9px; font-size: 22px; color: #1d261f; font-weight: 600; }
+.timeline-item p { margin: 0; color: #69736c; line-height: 1.75; font-size: 15px; }
+.management-section { background: #f7f9f7; padding: 125px 30px; }
+.management-container { max-width: 1180px; margin: 0 auto; }
+.management-intro { max-width: 760px; margin-bottom: 62px; }
+.management-intro p { margin-top: 20px; }
+.team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.team-card { background: #fff; min-height: 270px; padding: 32px 28px; border: 1px solid #e5ebe6; display: flex; flex-direction: column; justify-content: flex-end; position: relative; overflow: hidden; transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease; }
+.team-card::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: #1e5f36; transform: scaleX(0); transform-origin: left; transition: transform 0.35s ease; }
+.team-card:hover { transform: translateY(-7px); box-shadow: 0 20px 45px rgba(16,42,27,0.08); border-color: #d7e1da; }
+.team-card:hover::before { transform: scaleX(1); }
+.team-card-number { position: absolute; top: 28px; left: 28px; color: #d9e3dc; font-size: 34px; font-weight: 600; }
+.team-card h3 { margin: 0 0 8px; color: #172019; font-size: 21px; line-height: 1.35; }
+.team-card p { margin: 0; color: #1e5f36; font-size: 13px; font-weight: 600; letter-spacing: 0.7px; text-transform: uppercase; }
+.final-about-cta { padding: 120px 30px; background: #fff; text-align: center; }
+.final-about-cta p { max-width: 720px; margin: 22px auto 35px; color: #667068; line-height: 1.85; font-size: 17px; }
+.final-about-cta .cta-btn { border-radius: 0; padding: 15px 32px; }
+@media (max-width: 900px) { .about-intro, .story-section { grid-template-columns: 1fr; gap: 50px; padding-top: 85px; padding-bottom: 85px; } .story-copy { padding-top: 0; } .legacy-grid { grid-template-columns: 1fr; gap: 34px; } .team-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 700px) { .about-hero { min-height: auto; padding: 100px 24px 95px; } .about-hero::before { font-size: 180px; right: -20px; } .about-hero p { font-size: 16px; } .founder-statement { padding: 28px 25px; font-size: 17px; } .management-section, .final-about-cta { padding: 85px 22px; } .team-grid { grid-template-columns: 1fr; } .timeline { padding-left: 30px; } .timeline-item::before { left: -36px; } }
+</style>
+</head>
+<body>
+<header><a href="index.html" aria-label="Mittal Industries Home"><img src="images/logo.png" alt="Mittal Industries Logo"></a><nav aria-label="Primary navigation"><a href="index.html">Home</a><a class="active" href="about.html">About Us</a><a href="products.html">Products</a><a href="distribution.html">Distribution Chain</a><a href="contact.html">Contact</a></nav></header>
+<section class="about-hero"><div class="about-hero-content"><div class="about-eyebrow">Established 1994 · Jaipur, India</div><h1>A business built on the things that cannot be compromised.</h1><p>Quality. Trust. Responsibility. For more than three decades, these principles have shaped Mittal Industries and the relationships that have carried the company forward.</p></div></section>
+<section class="about-intro"><div><div class="section-label">The beginning</div><h2>One founder.<br>One conviction.<br>A lasting legacy.</h2></div><div class="intro-copy"><p>Established in 1994, Mittal Industries began with a vision shaped by determination and an unwavering belief in long-term business relationships. Founded and single-handedly built by <strong>Mr. Surendra Mittal</strong>, the company grew from the ground up through perseverance, discipline and uncompromising business ethics.</p><p>The early years demanded resilience. In a competitive industry, every relationship, every consignment and every decision had to earn trust. Through difficult markets and changing conditions, Mr. Mittal continued to build credibility one commitment at a time.</p><p>That discipline remains part of the company today. Mittal Industries has evolved into a professionally managed organization serving industrial customers through dependable sourcing, authorized distribution partnerships and a reputation built over decades.</p><div class="founder-statement">What began as one entrepreneur's determination to build something of lasting value became a business whose reputation was earned through consistency—not promises.</div></div></section>
+<section class="legacy-strip"><div class="legacy-grid"><div class="legacy-item"><span>Since</span><strong>1994</strong></div><div class="legacy-item"><span>Built on</span><strong>Quality & Trust</strong></div><div class="legacy-item"><span>Focused on</span><strong>Long-term Partnerships</strong></div></div></section>
+<section class="story-section"><div><div class="section-label">The journey</div><h2>Progress without losing the principles that built us.</h2><div class="story-copy"><p>As the company grew, its role became larger than simply supplying materials. Mittal Industries developed deep familiarity with the technical expectations of the diamond tools and industrial materials sector, where consistency and reliability are essential.</p><p>Through authorized distribution relationships and close engagement with manufacturers and customers, the company has built a portfolio around trusted materials and dependable service. Our position today has been created through sustained performance rather than short-term promises.</p><p>Mr. Mittal's involvement in the wider industry has also included participation in professional bodies and associations connected with the diamond tools sector. The same commitment to the industry continues to guide the company as it moves into its next chapter.</p></div></div><div class="timeline"><div class="timeline-item"><div class="timeline-year">1994</div><h3>The foundation</h3><p>Mittal Industries begins with a clear belief: business relationships should be built on trust, reliability and consistent quality.</p></div><div class="timeline-item"><div class="timeline-year">THE YEARS THAT FOLLOWED</div><h3>Credibility is earned</h3><p>Through perseverance and disciplined business practices, the company steadily develops long-term relationships across the industry.</p></div><div class="timeline-item"><div class="timeline-year">TODAY</div><h3>A broader industrial platform</h3><p>Mittal Industries combines decades of market experience with professional management, authorized distribution and a growing portfolio of industrial materials.</p></div></div></section>
+<section class="management-section"><div class="management-container"><div class="management-intro"><div class="section-label">The people behind the work</div><h2>Leadership with responsibility.</h2><p>Behind every long-term organization is a team that protects the standards it stands for. Our core management team brings together leadership, operations and financial discipline to support the business every day.</p></div><div class="team-grid"><div class="team-card"><div class="team-card-number">01</div><h3>Mr. Surendra Mittal</h3><p>Founder & Proprietor</p></div><div class="team-card"><div class="team-card-number">02</div><h3>Mr. Aashish Sharma</h3><p>Head Manager</p></div><div class="team-card"><div class="team-card-number">03</div><h3>Mrs. Shikha Saxena</h3><p>Accounts Head</p></div><div class="team-card"><div class="team-card-number">04</div><h3>Mr. Gajendra Singh Rajpoot</h3><p>Operations Manager</p></div></div></div></section>
+<section class="final-about-cta"><div class="section-label">The next chapter</div><h2>Built over decades.<br>Still moving forward.</h2><p>Our history gives us perspective. Our standards give us direction. And our focus remains the same: to create long-term value through quality, reliability and relationships that endure.</p><a href="contact.html" class="cta-btn">Start a Conversation</a></section>
+<a href="https://wa.me/919680023458" class="whatsapp-float" target="_blank" rel="noopener">WhatsApp Us</a>
+<footer><div class="footer-grid"><div class="footer-brand"><strong>MITTAL INDUSTRIES</strong><span>Premium Industrial Raw Materials</span><em>Established 1994</em></div><div class="footer-block"><strong>Office</strong><p>2 Krishna Vihar, Gopalpura Bypass<br>Jaipur, Rajasthan, India</p></div><div class="footer-block"><strong>Factory</strong><p>H1-782, Sitapura Industrial Area<br>Jaipur, Rajasthan – 302022</p></div><div class="footer-block"><strong>Contact</strong><p>+91 9680023458<br>+91 9414043956<br>mittalindustries.ayush@gmail.com</p></div></div></footer>
+</body></html>
