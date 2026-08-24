@@ -123,7 +123,3 @@ footer { background: #0d2f1c; color: rgba(255,255,255,.82); padding: 58px 30px; 
   .footer-brand { justify-content: flex-start; }
   .footer-logo { width: min(220px, 82vw); max-height: 82px; }
 }
-
-/* Footer logo is the only branding element in the footer. */
-.footer-brand .footer-logo { display: block; width: 210px; height: 88px; object-fit: contain; object-position: left center; }
-@media (max-width: 560px) { .footer-brand .footer-logo { width: 190px; height: 82px; } }
