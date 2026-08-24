@@ -456,16 +456,7 @@ form button { border: none; cursor: pointer; }
 /* FOOTER */
 /* ============================= */
 
-footer {
-  background: #0d2f1c;
-  color: rgba(255,255,255,0.82);
-  padding: 50px 30px;
-  font-size: 14px;
-  line-height: 1.8;
-  text-align: center;
-}
-
-footer strong { color: #fff; font-size: 18px; letter-spacing: 0.4px; }
+footer{background:#0d2f1c;color:rgba(255,255,255,.82);padding:58px 30px;font-size:14px;line-height:1.8}.footer-grid{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1.2fr 1fr 1fr 1.1fr;gap:42px;text-align:left;align-items:start}.footer-brand,.footer-block{min-width:0}.footer-brand>strong{display:block;color:#fff;font-size:20px;letter-spacing:1px;margin-bottom:10px}.footer-brand span{display:block;color:rgba(255,255,255,.78);margin-bottom:8px}.footer-brand em{display:block;color:rgba(255,255,255,.5);font-style:normal;font-size:12px;letter-spacing:1.5px;text-transform:uppercase}.footer-block>strong{display:block;color:#fff;font-size:11px;letter-spacing:1.8px;text-transform:uppercase;margin-bottom:12px}.footer-block p{margin:0;color:rgba(255,255,255,.72);line-height:1.8}@media(max-width:900px){.footer-grid{grid-template-columns:repeat(2,1fr);gap:34px}}@media(max-width:560px){footer{padding:44px 24px}.footer-grid{grid-template-columns:1fr;gap:30px}.footer-brand>strong{font-size:19px}}
 
 /* ============================= */
 /* WHATSAPP */
